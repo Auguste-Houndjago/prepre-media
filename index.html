@@ -43,13 +43,129 @@
   
     } 
 
+   .cercle {
+  position: absolute;
+  /* top: calc(50% - 242px);
+  left: calc(50% - 50px); */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  box-shadow:
+    inset 0 0 50px #fff,
+    inset 20px 0 80px #f0f,
+    inset -20px 0 80px #0ff,
+    inset 20px 0 300px #f0f,
+    inset -20px 0 300px #0ff,
+    0 0 50px #fff,
+    -10px 0 80px #f0f,
+    10px 0 80px #0ff;
+    z-index: 1;
+    transition: 1.5s;
+    animation: turn 12s infinite cubic-bezier(0.175, 0.885, 0.32, 1.275) alternate-reverse;
+    mix-blend-mode: color;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.cercle:hover{
+  opacity: 0;
+  
+}
+
+@keyframes turn {
+0%{
+  opacity: 0.5;
+  mix-blend-mode:screen;
+  box-shadow:
+    inset 0 0 50px #fff,
+    inset 20px 0 100px #f0f,
+    inset -20px 0 100px #0ff,
+    inset 20px 0 320px #f0f,
+    inset -20px 0 300px #0ff,
+    0 0 50px #fff,
+    -10px 0 80px #f0f,
+    10px 0 80px #0ff;
+  
+}
+
+50%{
+  opacity: 0.6;
+
+  box-shadow:
+    inset 0 0 50px #fff,
+    inset 20px 0 80px #f0f,
+    inset -20px 0 80px #0ff,
+    inset 20px 0 300px #f0f,
+    inset -20px 0 300px #0ff,
+    0 0 50px #fff,
+    -10px 0 80px #f0f,
+    10px 0 80px #0ff;
+}
+
+100%{
+  opacity: 0.4;
+  mix-blend-mode:screen;
+  box-shadow:
+    inset 0 0 50px #fff,
+    inset 20px 0 70px #f0f,
+    inset -20px 0 60px #0ff,
+    inset 20px 0 20px #f0f,
+    inset -20px 0 210px #0ff,
+    0 0 50px #fff,
+    -10px 0 80px #f0f,
+    10px 0 80px #0ff;
+  
+  
+}
+}
+
+.bulle{
+  position: absolute;
+  /* top: calc(50% - 242px);
+  left: calc(50% - 50px); */
+  top: 50%;
+  left: 80%;
+  /* transform: translate(-50%, -50%); */
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  box-shadow:
+    inset 0 0 50px #fff,
+    inset 20px 0 80px #f0f,
+    inset -20px 0 80px #0ff,
+    inset 20px 0 300px #f0f,
+    inset -20px 0 300px #0ff,
+    0 0 50px #fff,
+    -10px 0 80px #f0f,
+    10px 0 80px #0ff;
+    z-index: 1;
+    transition: 1.5s;
+    animation: turn 12s infinite cubic-bezier(0.175, 0.885, 0.32, 1.275) alternate-reverse;
+    mix-blend-mode: color;
+}
+
+.bulle2{
+  top: 20%;
+  left: 10%;
+}
+
   </style>
 </head>
 <body  class="bg-gray-900 flex items-center justify-center min-h-screen">
-
+  <div class="bulle"></div>
+  <div class="bulle bulle2"></div>
   <div class="bg-gray-800 rounded-lg shadow-lg p-8 w-80">
     <div class="flex flex-col items-center">
-      <img class="w-24 h-24 rounded-full" src="public/precious-image.jpeg" alt="Jessica Randall">
+      <span class="image-container">
+        <img class="w-24 h-24 rounded-full pointer-events-none z-20" src="public/precious-image.jpeg" alt="Jessica Randall">
+        <!-- <div class="cercle"></div> -->
+      </span>
       <h2 class="mt-4 text-2xl font-semibold text-white">Precious Ogwo</h2>
       <p class="text-green-400">Lomé , Togo</p>
       <p class="mt-2 text-gray-400 text-center break-words ">"Front-end developper , loves reading and also into games."</p>
