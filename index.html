@@ -148,18 +148,45 @@
     transition: 1.5s;
     animation: turn 12s infinite cubic-bezier(0.175, 0.885, 0.32, 1.275) alternate-reverse;
     mix-blend-mode: color;
+
+}
+
+.capsule{
+  animation: bouge 7s ease-in-out infinite;
+}
+
+
+@keyframes bouge {
+ 0%{
+  transform: translate(100px, 0px);
+ }
+  50%{
+    transform: translate(-100px, 60px);
+  }
+
+  100%{
+    transform: translate(100px, 0px);
+  }
 }
 
 .bulle2{
-  top: 20%;
-  left: 10%;
+  top: 0%;
+  left: 0%;
+}
+
+.bulle:nth-child(2){
+  background-image: url(public/github.svg);
 }
 
   </style>
 </head>
 <body  class="bg-gray-900 flex items-center justify-center min-h-screen">
   <div class="bulle"></div>
-  <div class="bulle bulle2"></div>
+  <span class="relative -left-4 capsule"> <div class="bulle bulle2"></div>
+    <img class="" style="width: 100px;" src="public/github.svg" alt="github">
+  </span>
+ 
+  <div class="bulle top-4 "></div>
   <div class="bg-gray-800 rounded-lg shadow-lg p-8 w-80">
     <div class="flex flex-col items-center">
       <span class="image-container">
